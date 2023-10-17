@@ -1,0 +1,14 @@
+<form [formGroup] = "profileInfo" (ngSubmit) ="onSubmit()">
+    <mat-form-field class="example-full-width">
+        <mat-label>First Name:</mat-label>
+        <input matInput type="text" id="first-name" name="first-name"  formControlName="firstName">
+    </mat-form-field>
+    
+  
+    <mat-form-field class="example-full-width">
+        <mat-label>Last Name:</mat-label>
+        <input matInput type="text" id="last-name" name="last-name"  formControlName="lastName">
+    </mat-form-field>
+    <button  mat-raised-button type="submit" color="primary">submit</button>
+
+</form>
