@@ -1,0 +1,25 @@
+<form [formGroup] ="feedBackForm" (ngSubmit) ="handleSubmit()">
+   <h3 class="reactive-form-header"><b>Reactive Form using form builder</b></h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>name:</mat-label>
+        <input matInput type="text" id="name" name="name"  formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>email:</mat-label>
+        <input matInput type="text" id="email" name="email"  formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>age:</mat-label>
+        <input matInput type="text" id="age" name="age"  formControlName="age">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>comment:</mat-label>
+        <input matInput type="text" id="comment" name="comment"  formControlName="comment">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>star:</mat-label>
+        <input matInput type="text" id="star" name="star"  formControlName="star">
+    </mat-form-field>
+
+    <button  mat-raised-button type="submit" color="primary">submit</button>
+</form>
