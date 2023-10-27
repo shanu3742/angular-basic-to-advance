@@ -7,16 +7,25 @@ import { FormThreeComponent } from './page/form-three/form-three.component';
 
 const routes: Routes = [
   {
-    path:'', redirectTo: '/form1', pathMatch: 'full'
+    path:'', redirectTo: '/form', pathMatch: 'full'
   },
   {
-    path: 'form1', component: FormOneComponent
-  },
-  {
-    path:'form2',component:FormTwoComponent
-  },
-  {
-    path:'form3',component:FormThreeComponent
+    path: 'form', children:[
+      {
+        path:'',component:FormOneComponent
+      },
+      {
+        path:'formgroupandformControl',component:FormOneComponent
+      },
+      {
+        path:'formBuilder',component:FormTwoComponent
+      },
+      {
+        path:'formBuildInValidation',component:FormThreeComponent
+      },
+
+
+    ]   
   },
   {
     path: '**', component: PageNotFoundComponent

@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    color:white;
 }
 .example-spacer {
     flex: 1 1 auto;
@@ -14,4 +15,61 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: rgb(10, 10, 10);
   }
+  .menu-bar{
+    position: fixed;
+    min-width: 200px;
+    min-height: 90vw;
+    top: 0%;
+    background-color: rgb(110, 109, 109);
+    border: 1px solid rgb(22, 22, 22);
+    border-right: 0px solid rgb(31, 30, 30);
+    border-radius: 10px;
+    right: 0px;
+    z-index: 1000;
+    animation: sidebar-animation 1s ;
+    border-top-right-radius: 0px;
+    div{
+      width:100% ;    
+      // background-color: aqua;
+      display: flex;
+      justify-content: flex-end;
+      .close-icon{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(101, 101, 101);
+        border: 1px solid rgb(10, 10, 10);
+        border-radius: 50%;
+        animation: close-icon-animation 3s ;
+        opacity: 1;
+      }
+
+      @keyframes close-icon-animation {
+        from{
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
+        
+      }
+
+    }
+  }
+  @keyframes sidebar-animation {
+    from{
+      min-width: 0px;
+    }
+    to{
+      min-width: 200px;
+    }
+    
+  }
+  .example-icon{
+    position: relative;
+  }
+ 

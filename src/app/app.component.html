@@ -4,12 +4,31 @@
     <mat-toolbar-row>
       <span>My App</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click) ="handleToggle()" >
+        <mat-icon *ngIf="!isOpen">menu</mat-icon>
+        <mat-icon *ngIf="isOpen">close</mat-icon>
       </button>
     </mat-toolbar-row>
+    <div *ngIf="isOpen" class="menu-bar">
+      <div>
+       <div class="close-icon" (click) ="handleClose()">
+        <mat-icon >close</mat-icon>
+       </div>
+      </div>
+      <!-- Navigate using html -->
+      <div>
+        <a [routerLink]="['form/formgroupandformControl']">formgroupandformControl</a>
+      </div>
+      <!-- on click Navigate -->
+      <div (click) ="onNavigate('form/formBuilder')">
+        formBuilder
+      </div>
+      <div (click) ="onNavigate('form/formBuildInValidation')">
+        formBuildInValidation
+      </div>
+      </div>
 
-    <mat-toolbar-row>
+    <!-- <mat-toolbar-row>
       <span>Second Line</span>
       <span class="example-spacer"></span>
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -18,7 +37,7 @@
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>share</mat-icon>
       </button>
-    </mat-toolbar-row>
+    </mat-toolbar-row> -->
   </mat-toolbar>
 </p>
 <div class="app-counter">

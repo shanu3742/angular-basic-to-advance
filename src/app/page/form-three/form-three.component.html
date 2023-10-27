@@ -1,25 +1,43 @@
 <form [formGroup] ="feedbackFormWithBuildInValidation" (ngSubmit) ="handleSubmit()">
 
  <h3 class="reactive-form-header"><b>Reactive Form using form builder with build in validation</b></h3>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width " appearance="outline"  >
         <mat-label>name:</mat-label>
         <input matInput type="text" id="name" name="name"  formControlName="name">
+        <mat-error *ngIf="feedbackFormWithBuildInValidation.get('name')?.invalid">
+          <b>
+            {{getNameErrorMessage()}}
+          </b>  
+        </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+   
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>email:</mat-label>
         <input matInput type="text" id="email" name="email"  formControlName="email">
+        <mat-error *ngIf="feedbackFormWithBuildInValidation.get('email')?.invalid">
+           <b>{{getEmailErrorMessage()}}</b> 
+        </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>age:</mat-label>
         <input matInput type="text" id="age" name="age"  formControlName="age">
+        <mat-error *ngIf="feedbackFormWithBuildInValidation.get('age')?.invalid">
+            <b>{{getAgeErrorMessage()}}</b> 
+         </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>comment:</mat-label>
         <input matInput type="text" id="comment" name="comment"  formControlName="comment">
+        <mat-error *ngIf="feedbackFormWithBuildInValidation.get('age')?.invalid">
+            <b>{{getCommentErrorMessage()}}</b> 
+         </mat-error>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>star:</mat-label>
         <input matInput type="text" id="star" name="star"  formControlName="star">
+        <mat-error *ngIf="feedbackFormWithBuildInValidation.get('age')?.invalid">
+            <b>{{getStarErrorMessage()}}</b> 
+         </mat-error>
     </mat-form-field>
 
     <button  mat-raised-button type="submit" color="primary">submit</button>
